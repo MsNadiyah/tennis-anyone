@@ -1,0 +1,121 @@
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+
+<!-- Form partial for new players -->
+
+	<%= form_for @instructor, html: { class: "pure-form pure-form-aligned instructor-form" } do |f| %>
+
+		<div class="new-form-part1">
+			
+			<div class="pure-control-group">
+				<%= f.label :name, "My name is: " %> 
+				<%= f.text_field :name, :placeholder => "Serena Williams" %>
+			</div>
+
+			<div class="pure-control-group">
+				<%= f.label :gender_female, "Female" %>
+				<%= f.radio_button :gender, "Female" %>
+				<%= f.label :gender_male, "Male" %>
+				<%= f.radio_button :gender, "Male" %>
+			</div>
+			
+			<div class="pure-control-group">
+				<%= f.label :zip, "I live in: " %> 
+				<%= f.text_field :zip, :placeholder => 10012 %>
+			</div>
+
+			<div class="pure-control-group">
+				<%= f.label :highest_level, "Highest level of play: " %> 
+				<%= f.select(:highest_level, options_for_select([
+					["Competitive Juniors", 1],	
+					["NCAA/Collegiate", 2],	
+					["Challenger (semi-pro)", 3],	
+					["Professional", 4]], 
+					selected: :highest_level)) %>
+			</div>
+
+			<div class="pure-control-group">
+				<%= f.label :email, "My email address: " %> 
+				<%= f.text_field :email, :placeholder => "serena.williams@gmail.com" %>
+			</div>
+
+			<div class="pure-control-group">
+				<%= f.label :password, "Password: " %> 
+				<%= f.text_field :password, :placeholder => "Password" %>
+			</div>
+
+			<div class="pure-control-group">
+				<%= f.label :password_confirmation %> 
+				<%= f.text_field :password_confirmation, :placeholder => "Re-enter your password" %>
+			</div>
+
+		</div>
+
+		<div class="new-form-part2">
+
+			<h2>Profile Part II</h2>
+			<p>Users will be able to skip this portion of the profile</p>
+
+			<div class="pure-control-group">
+				<%= f.label :blurb, "My tennis history: " %> 
+				<%= f.text_area :blurb, :placeholder => "How I got into tennis, how I started teaching etc." %>
+			</div>
+
+
+			<div class="pure-control-group">
+				<%= f.label :lesson_type %> 
+				<%= f.select(:lesson_type,  options_for_select([
+					["Private lessons", 1],
+					["Group clinics", 2],
+					["Match drills", 3]],
+					selected: :lesson_type)) %>
+			</div>
+
+			<div class="pure-control-group">
+				<%= f.label :lesson_ages %> 
+				<%= f.select(:lesson_ages,  options_for_select([
+					["Children", 1],
+					["Competitive Juniors", 2],
+					["Adults", 3]],
+					selected: :lesson_type)) %>
+			</div>
+
+			<div class="pure-control-group">
+				<%= f.label :lesson_speciality %> 
+				<%= f.select(:lesson_speciality,  options_for_select([
+					["Groundstrokes", 1],
+					["Forehand", 2],
+					["Backhand", 3],
+					["Serve", 4],
+					["Net game", 5],
+					["Spin", 6],
+					["Endurance/fitness", 7]],
+					selected: :lesson_type)) %>
+			</div>
+
+			<div class="pure-control-group">
+				<%= f.label :rate_hourly %> 
+				<%= f.text_field(:rate_hourly, :placeholder => 'Enter "50" for $50.00/hour') %>
+			</div>
+
+			<div class="pure-control-group">
+				<%= f.label :rate_clinic %> 
+				<%= f.text_field(:rate_clinic, :placeholder => 'Enter "50" for $50.00/hour') %>
+			</div>
+
+			<div class="pure-control-group">
+				<%= f.label :pro_availability %> 
+				<%= f.select(:pro_availability,  options_for_select([
+					["Weekday AMs", 1],
+					["Weekday PMs", 2],
+					["Weekday", 3],
+					["Weekend AMs", 4],
+					["Weekend PMs", 5],
+					["Weekend", 6]],
+					selected: :pro_availability)) %>
+			</div>
+
+		</div>
+
+		<button class="pure-button pure-button-primary"><%= f.submit "Sign me up!" %> </button>
+
+	<% end %> <!-- Ending the form "do" function -->

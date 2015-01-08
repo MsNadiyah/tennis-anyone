@@ -1,0 +1,27 @@
+<!-- Creating the "show all" index for tennis players -->
+
+<h1>Our tennis players</h1>
+
+<!-- Displays all of the tennis players -->
+<ul>
+
+	<!-- For each player ... -->
+	<% @players.each do |player| %>
+
+	<!-- Display the following for each tennis player -->
+	<li>
+		<h3><strong><%= player.name %></strong></h3> 
+		<ul>
+			<li> <strong>Email address: </strong><%= player.email%> </li>
+			<li> <strong>Location: </strong><%= player.zip %> </li>
+			<li> <strong>Level: <%= player.level %> </strong></li>
+			<li> <strong>Availability: </strong><%= player.availability %> </li> 
+			<li> <button class="show-info"> <%= link_to "Show player", player %> </button> </li>
+		</ul>
+	</li>
+
+	<!-- Ends the rails display -->
+	<% end %>
+
+</ul>
+

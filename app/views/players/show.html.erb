@@ -1,0 +1,32 @@
+<!-- Displays a single player's information -->
+
+<!-- PLACEHOLDER header partial -->
+<header>
+	<h1><%= @player.name %></h1>
+</header>
+
+<!-- Section for a player's header information -->
+	<div class="member-header">
+		<p> Placeholder for the beginning of a player's profile </p>
+		<ul class="member-info-part1">
+			<li>Level: <%= @player.level %></li>
+			<li>Location: <%= @player.zip %></li> 
+			<li>Availability: <%= @player.availability %></li>
+		</ul>
+	</div>
+
+<!-- Section for a player's additional info -->
+	<div class="member-body">
+		<p> Placeholder for the rest of a player's profile </p>
+		<ul class="member-info-part2">
+			<li>My tennis story: <%= @player.blurb %></li>
+			<li>My secret weapon is my: <%= @player.secret_weapon %></li>
+			<li>My goal is to: <%= @player.goal %></li>
+			<li>Interested in Lessons? <%= check_box("Interested in lessons?", @player.interest_lessons, {checked: true}) %></li>
+			<li> Interested in joining a league? <%= check_box("Interested in joining a league?", @player.interest_league, {checked: true}) %> </li>
+		</ul>
+	</div>
+
+	<button> <%= link_to "Message this player", "/" %> </button>
+
+	<button> <%= link_to "Back to Search Results", players_path %> </button>

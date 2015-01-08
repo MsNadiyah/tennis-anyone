@@ -1,0 +1,139 @@
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+
+<!-- Form partial for new players -->
+
+<%= form_for @player, html: { class: "pure-form pure-form-aligned instructor-form"}  do |f| %>
+
+	<div class="new-form-part1">
+		
+		<div class="pure-control-group">
+			<%= f.label :name, "My name is: " %> 
+			<%= f.text_field :name, :placeholder => "Jimmy Connors" %>
+		</div>
+
+		<div class="pure-control-group">
+			<%= f.label :gender, "Female" %>
+			<%= f.radio_button :gender, "Female" %>
+			<%= f.label :gender, "Male" %>
+			<%= f.radio_button :gender, "Male" %>
+		</div>
+		
+		<div class="pure-control-group">
+			<%= f.label :zip, "I live in: " %> 
+			<%= f.text_field :zip, :placeholder => 10012 %>
+		</div>
+
+		<div class="pure-control-group">
+			<%= f.label :level, "My USTA level is: " %> 
+			<%= f.select(:level, options_for_select([
+				["2.0", 1],
+				["2.5", 2],
+				["3.0", 3],
+				["3.5", 4],
+				["4.0", 5],
+				["4.5", 6],
+				["5.0", 7],
+				["5.5", 8],
+				["Open", 8]],
+				selected: :level)) %>
+		</div>
+
+		<div class="pure-control-group">
+			<%= f.label :email, "My email address: " %> 
+			<%= f.text_field :email, :placeholder => "jimmy.connors@gmail.com" %>
+		</div>
+			
+		<div class="pure-control-group">
+			<%= f.label :password, "My password: " %> 
+			<%= f.password_field :password, :placeholder => "Enter your password" %>
+		</div>
+
+		<div class="pure-control-group">
+			<%= f.label :password_confirmation, "Confirm your password:"%>
+			<%= f.password_field :password_confirmation, :placeholder => "Re-enter your password" %>
+		</div>
+
+	</div>
+
+	<!-- Part II of the profile that users can skip or complete later -->
+	<div class="new-form-part2">
+
+		<h2>Profile Part II</h2>
+		<p>Users will be able to skip this portion of the profile</p>
+			
+		<div class="pure-control-group">
+			<%= f.label :blurb, "About me: " %> 
+			<%= f.text_area :blurb, :placeholder => "I play tennis because..." %>
+		</div>
+		
+		<!-- <div class="pure-control-group">
+			<%= f.label :type_of_play, "I will play: " %> 
+			<%= f.select(:type_of_play, options_for_select([
+				["Singles", 1],
+				["Doubles", 2],
+				["Drills", 3],
+				["Rallying/Hitting", 4]],
+				selected: :type_of_play )) %>
+		</div> -->
+
+		<!-- Checkboxes for the type of play -->
+		<div class="pure-control-group">
+			
+		</div>
+
+		<div class="pure-control-group">
+			<%= f.label :availability, "I can play on: " %> 
+			<%= f.select(:availability, options_for_select([
+				["Weekday mornings", 1],
+				["Weekday evenings", 2],
+				["Weekday all day" , 3],
+				["Weekend mornings", 4],
+				["Weekend evenings", 5],
+				["Weekend all day", 6]],
+				selected: :availability )) %> 
+		</div>
+
+		<div class="pure-control-group">
+			<%= f.label :secret_weapon, "My secret weapon: " %> 
+			<%= f.select(:secret_weapon, options_for_select([
+				["Groundstrokes", 1],
+				["Forehand", 2],
+				["Backhand", 3],
+				["Serve", 4],
+				["Net game", 5],
+				["Spin", 6],
+				["Fitness/Endurance", 7]],
+				selected: :secret_weapon )) %>			
+		</div>
+			
+		<div class="pure-control-group">
+			<%= f.label :goal, "I want to improve my: " %> 
+			<%= f.select(:goal, options_for_select([
+			 	["Groundstrokes", 1],
+				["Forehand", 2],
+				["Backhand", 3],
+				["Serve", 4],	
+				["Net game", 5],
+				["Spin", 6],
+				["Endurance/fitness", 7]],
+				include_blank: true, 
+				selected: :goal )) %>
+		</div>
+
+		<div class="pure-control-group">
+			<%= f.label :interest_lessons, "I am interested in lessons" %> 
+			<%= f.check_box :interest_lessons %>
+			<p class="clarifying-info"> Checking this box will allow teaching pro's to message you</p>
+		</div>
+
+		<div class="pure-control-group">
+			<%= f.label :interest_lessons, "I am interested in joining a league" %> 
+			<%= f.check_box :interest_league %>
+			<p class="clarifying-info">Checking this box will allow league organizers to message you</p>
+		</div>
+
+	</div>
+
+	<button class="pure-button pure-button-primary"><%= f.submit "Sign me up!" %> </button>
+
+<% end %> <!-- Ending the form "do" function -->

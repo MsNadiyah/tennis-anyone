@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  zip: 1.5
+  level: MyString
+  email: MyString
+  type_of_play: MyString
+  availability: MyString
+  secret_weapon: MyString
+  goal: MyString
+  interest_lessons: MyString
+  interest_league: MyString
+
+two:
+  name: MyString
+  zip: 1.5
+  level: MyString
+  email: MyString
+  type_of_play: MyString
+  availability: MyString
+  secret_weapon: MyString
+  goal: MyString
+  interest_lessons: MyString
+  interest_league: MyString

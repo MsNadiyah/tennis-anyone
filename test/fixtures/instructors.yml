@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  zip: 1.5
+  radius: 1.5
+  email: MyString
+  tennis_history: MyString
+  lesson_type: MyString
+  lesson_ages: MyString
+  lesson_speciality: MyString
+  rate_hourly: MyString
+  rate_clinic: MyString
+  pro_availability: MyString
+
+two:
+  name: MyString
+  zip: 1.5
+  radius: 1.5
+  email: MyString
+  tennis_history: MyString
+  lesson_type: MyString
+  lesson_ages: MyString
+  lesson_speciality: MyString
+  rate_hourly: MyString
+  rate_clinic: MyString
+  pro_availability: MyString

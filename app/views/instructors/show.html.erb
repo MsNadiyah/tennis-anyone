@@ -1,0 +1,33 @@
+<!-- Displays a single pro's information -->
+
+<!-- PLACEHOLDER header partial -->
+<header>
+	<h1><%= @instructor.name %></h1>
+</header>
+
+<!-- Section for a player's header information -->
+	<div class="member-header">
+		<p> Placeholder for the beginning of a player's profile </p>
+		<ul class="member-info-part1">
+			<li>Location: <%= @instructor.zip %></li>
+			<li>Highest Level of Play: <%= @instructor.highest_level %></li> 
+			<li>Availability: <%= @instructor.pro_availability %></li>
+		</ul>
+	</div>
+
+<!-- Section for a player's additional info -->
+	<div class="member-body">
+		<p> Placeholder for the rest of a pro's profile </p>
+		<ul class="member-info-part2">
+			<li>My teaching and playing experience: <%= @instructor.blurb %></li>
+			<li>I offer: <%= @instructor.lesson_type %></li>
+			<li>I teach: <%= @instructor.lesson_ages %></li>
+			<li>I specalize in: <%= @instructor.lesson_speciality %></li>
+			<li>Private lesson price per hour: <%= @instructor.rate_hourly %></li>
+			<li>Group/Cinic price per hour: <%= @instructor.rate_clinic %> </li>
+		</ul>
+	</div>
+
+<button> <%= link_to "Message this player", "/" %> </button>
+
+<button> <%= link_to "Back to Search Results", instructors_path %> </button>
